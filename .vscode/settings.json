@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.i": "HIT",
+        "new": "cpp",
+        "iostream": "cpp",
+        "random": "cpp",
+        "ostream": "cpp",
+        "*.tcc": "cpp",
+        "chrono": "cpp",
+        "*.ipp": "cpp"
+    }
+}

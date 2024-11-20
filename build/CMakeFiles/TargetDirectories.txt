@@ -1,0 +1,6 @@
+/home/bill/projects/mfem_thermal_expansion/build/CMakeFiles/edit_cache.dir
+/home/bill/projects/mfem_thermal_expansion/build/CMakeFiles/rebuild_cache.dir
+/home/bill/projects/mfem_thermal_expansion/build/bins/CMakeFiles/main.dir
+/home/bill/projects/mfem_thermal_expansion/build/bins/CMakeFiles/temp.dir
+/home/bill/projects/mfem_thermal_expansion/build/bins/CMakeFiles/edit_cache.dir
+/home/bill/projects/mfem_thermal_expansion/build/bins/CMakeFiles/rebuild_cache.dir
