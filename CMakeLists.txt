@@ -24,6 +24,11 @@ set(METIS_INCLUDES ${METIS_DIR}/include)
 set(MFEM_INCLUDES ${MFEM_DIR}/include)
 set(PETSC_INCLUDES "${PETSC_DIR}/include" "${PETSC_DIR}/${PETSC_ARCH}/include")
 
+set(MESH_DEPENDENCY_FILE ${CMAKE_SOURCE_DIR}/simple_cube.g)
+set(MESH_DEPENCENCY_FILE_DEST ${CMAKE_BINARY_DIR}/simple_cube.g)
+file(COPY ${MESH_DEPENDENCY_FILE} DESTINATION ${CMAKE_BINARY_DIR})
+add_custom_target(copy_dependency ALL DEPENDS ${MESH_DEPENDENCY_FILE_DEST})
+
 include_directories(${MFEM_INCLUDES} ${HYPRE_INCLUDES} ${METIS_INCLUDES} ${CMAKE_SOURCE_DIR}/include ${PETSC_INCLUDES})
 
 add_subdirectory(bins)
