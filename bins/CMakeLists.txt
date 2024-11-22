@@ -10,13 +10,10 @@ endforeach()
 list (REMOVE_DUPLICATES ${PROJECT_NAME}_INCLUDE_DIRS)
 
 add_executable(main ${project_src} main.cpp)
-target_include_directories(main PUBLIC ${${PROJECT_NAME}_INCLUDE_DIRS})
-target_link_directories(main PUBLIC ${MFEM_DIR})
-target_link_libraries(main PUBLIC mfem MPI::MPI_CXX)
-
-add_executable(temp ${project_src} temp.cpp)
-target_include_directories(temp PUBLIC ${${PROJECT_NAME}_INCLUDE_DIRS})
-target_link_directories(temp PUBLIC ${MFEM_DIR})
-target_link_libraries(temp PUBLIC mfem MPI::MPI_CXX)
-
-
+target_include_directories(main PRIVATE ${${PROJECT_NAME}_INCLUDE_DIRS})
+target_link_directories(main PRIVATE "${MFEM_DIR}/lib" "${HYPRE_DIR}/lib" "${METIS_DIR}/lib" "${PETSC_DIR}/${PETSC_ARCH}/lib")
+target_link_libraries(main PRIVATE mfem MPI::MPI_CXX metis petsc HYPRE)
+# target_link_options(main PRIVATE "-Wl,-rpath" PRIVATE "${MFEM_DIR}/lib")
+# target_link_options(main PRIVATE "-Wl,-rpath" PRIVATE "${HYPRE_DIR}/lib")
+# target_link_options(main PRIVATE "-Wl,-rpath" PRIVATE "${METIS_DIR}/lib")
+# target_link_options(main PRIVATE "-Wl,-rpath" PRIVATE "${PETSC_DIR}/${PETSC_ARCH}/lib")
